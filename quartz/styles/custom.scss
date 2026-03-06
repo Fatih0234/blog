@@ -3,6 +3,10 @@
 // Kanagawa – extra polish
 // Wave palette accent overrides applied on top of quartz.config.ts colors
 
+// =============================================================================
+// SECTION 1: Selection & global overrides
+// =============================================================================
+
 // Slightly warmer selection color
 ::selection {
   background-color: rgba(126, 156, 216, 0.3);
@@ -19,6 +23,10 @@ pre {
     stroke: var(--gray);
   }
 }
+
+// =============================================================================
+// SECTION 2: Homepage hero & cards
+// =============================================================================
 
 // Homepage hero
 .home-hero {
@@ -98,7 +106,9 @@ pre {
   flex-shrink: 0;
 }
 
-// === Fixed top navbar ===
+// =============================================================================
+// SECTION 3: Fixed navbar
+// =============================================================================
 header {
   position: fixed !important;
   top: 0;
@@ -137,6 +147,10 @@ body {
   }
 }
 
+
+// =============================================================================
+// SECTION 4: Search bar
+// =============================================================================
 
 // Search in navbar: icon-only, vertically centered, with | separator
 header .search {

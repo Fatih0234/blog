@@ -1,17 +1,38 @@
-# Quartz v4
+# fatih's blog
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Personal blog and digital brain built with [Quartz v4](https://quartz.jzhao.xyz/).
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+Live site: https://fatih0234.github.io/blog/
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+## Structure
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+```
+content/
+  blog/        # blog posts
+  brain/       # symlink → /Users/fatihkarahan/Desktop/my-vault (Obsidian vault)
+  index.md     # homepage
+```
 
-## Sponsors
+The `brain/` directory is an absolute symlink to the local Obsidian vault. It will not resolve on other machines without updating the symlink target.
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+## Local dev
+
+```bash
+npx quartz build --serve
+```
+
+## Deploy
+
+```bash
+npx quartz sync
+```
+
+Pushes to `main`, which triggers the GitHub Actions workflow (`.github/workflows/deploy.yml`) and deploys to GitHub Pages.
+
+## Customization
+
+| File | Purpose |
+|------|---------|
+| `quartz.config.ts` | Site metadata, plugins, theme colors (Kanagawa) |
+| `quartz.layout.ts` | Page layout — which components appear where |
+| `quartz/styles/custom.scss` | Custom CSS overrides (navbar, cards, search, etc.) |
