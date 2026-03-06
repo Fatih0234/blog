@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#98BB6C" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Note cards: heavier stroke so they read as solid rectangles -->
+  <rect x="1" y="2" width="9" height="6" rx="1" stroke-width="1.75"/>
+  <rect x="14" y="2" width="9" height="6" rx="1" stroke-width="1.75"/>
+  <rect x="7" y="16" width="10" height="6" rx="1" stroke-width="1.75"/>
+  <!-- Connecting lines: thinner so cards are visually dominant -->
+  <line x1="10" y1="5" x2="14" y2="5" stroke-width="1"/>
+  <line x1="5.5" y1="8" x2="10" y2="16" stroke-width="1"/>
+  <line x1="18.5" y1="8" x2="14" y2="16" stroke-width="1"/>
+</svg>
