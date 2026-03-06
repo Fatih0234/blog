@@ -1,23 +1,24 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { pathToRoot } from "../util/path"
 
-const CustomNav: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
+const CustomNav: QuartzComponent = ({ fileData, cfg }: QuartzComponentProps) => {
   const slug = fileData.slug ?? ""
   const isActive = (prefix: string) => slug === prefix || slug.startsWith(prefix + "/")
   const base = pathToRoot(fileData.slug!)
+  const assetBase = cfg.baseUrl ? new URL(`https://${cfg.baseUrl}`).pathname.replace(/\/$/, "") : ""
 
   return (
     <nav class="custom-nav">
       <a href={`${base}/blog`} class={isActive("blog") ? "active" : ""}>
-        <img src={`${base}/static/icons/blog-icon.svg`} alt="" class="nav-icon" />
+        <img src={`${assetBase}/static/icons/blog-icon.svg`} alt="" class="nav-icon" />
         Blog
       </a>
       <a href={`${base}/brain`} class={isActive("brain") ? "active" : ""}>
-        <img src={`${base}/static/icons/brain-icon.svg`} alt="" class="nav-icon" />
+        <img src={`${assetBase}/static/icons/brain-icon.svg`} alt="" class="nav-icon" />
         Brain
       </a>
       <a href={`${base}/tags`} class={isActive("tags") ? "active" : ""}>
-        <img src={`${base}/static/icons/tags-icon.svg`} alt="" class="nav-icon" />
+        <img src={`${assetBase}/static/icons/tags-icon.svg`} alt="" class="nav-icon" />
         Tags
       </a>
     </nav>
