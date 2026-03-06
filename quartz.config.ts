@@ -8,47 +8,46 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
+    pageTitle: "fatih karahan",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
-    analytics: {
-      provider: "plausible",
-    },
+    analytics: null,
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    baseUrl: "fatih0234.github.io/blog",
+    ignorePatterns: ["private", "templates", ".obsidian", "*.canvas"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: "Inter",
+        body: "Inter",
+        code: "JetBrains Mono",
       },
+      // Kanagawa Wave (dark) / Kanagawa Paper (light)
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#f2ecbc",       // sumiInk0 / paper bg
+          lightgray: "#e7dba0",   // sumiInk1
+          gray: "#9e9b93",        // fujiGray
+          darkgray: "#545464",    // sumiInk6
+          dark: "#1f1f28",        // sumiInk0 dark text
+          secondary: "#7e9cd8",   // waveBlue2 (links)
+          tertiary: "#76946a",    // springGreen
+          highlight: "rgba(126, 156, 216, 0.12)",
+          textHighlight: "#e6c38488",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          light: "#1f1f28",       // sumiInk0
+          lightgray: "#2a2a37",   // sumiInk2
+          gray: "#727169",        // fujiGray
+          darkgray: "#c8c093",    // oldWhite
+          dark: "#dcd7ba",        // fujiWhite
+          secondary: "#7e9cd8",   // waveBlue2
+          tertiary: "#76946a",    // springGreen
+          highlight: "rgba(126, 156, 216, 0.12)",
+          textHighlight: "#e6c38488",
         },
       },
     },
@@ -88,8 +87,6 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
     ],
   },
 }
